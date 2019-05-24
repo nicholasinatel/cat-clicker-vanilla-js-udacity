@@ -1,7 +1,71 @@
+/* My CSS */
+main {
+    height: 100vh;
+}
+
 img {
     max-width: 480px;
 }
 
+h1 {
+    color: white;
+}
 #admin-view {
     display: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+}
+
+/* #cat-list li {
+    line-height: 100px;
+} */
+
+#cat-list li:hover {
+    cursor: pointer;
+}
+
+.nav-link {
+    max-width: 10px;
+    padding: 0;
+    padding-left: 10px;
+    display: inline;
+}
+
+li {
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+}
+#cat-name {
+    width: 150px;
+}
+#cat-count {
+    display: block;
+    width: 50px;
+}
+.canvas-container {
+    overflow:hidden;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    left: 0px;
+    top: 0;
+    z-index: -1;
+    opacity: ;
+}
+#pixie {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* top: 48px;
+    left: 0; */
+    /* bottom: 0; */
+    background:-moz-linear-gradient(top, #040429, #257eb7);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#040429), color-stop(100%,#257eb7));
+    
 }

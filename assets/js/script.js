@@ -65,13 +65,17 @@ var octopus = {
     },
 
     adminSave: function (formName, formImg, formClick) {
+        console.log("i wass called")
+        console.log(formName)
         for (var i = 0; i < model.cats.length; i++) {
             if (model.cats[i].name == formName) {
                 model.cats[i].name = formName;
                 model.cats[i].imgSrc = formImg;
                 model.cats[i].clickCount = formClick;
+                console.log('match')
             }
         }
+
         catView.render();
     },
     adminVisualize: function () {
@@ -106,6 +110,7 @@ var adminView = {
         })
         this.adminSave.addEventListener('click', function (e) {
             let formName = document.getElementById("name").value;
+            console.log("formName: ", formName);
             let formImg = document.getElementById("imgurl").value;
             let formClick = document.getElementById("clicks").value;
             octopus.adminSave(formName, formImg, formClick);
@@ -177,6 +182,16 @@ var catListView = {
             elem = document.createElement('li')
             elem.textContent = cat.name
 
+            childElem = document.createElement('a')
+            childElem.setAttribute('class','nav-link')
+
+            grandChildElem = document.createElement('i')
+            grandChildElem.setAttribute('data-feather', 'github')
+            grandChildElem.setAttribute('class', 'feather')
+
+            childElem.appendChild(grandChildElem)
+            elem.appendChild(childElem)
+
             // on click, setCurrentCat and render the catView
             // (this uses our closure-in-a-loop trick to connect the value
             // of the car variable to the click event function)
@@ -189,6 +204,8 @@ var catListView = {
 
             // finally, add the elemnt to the list
             this.catListElem.appendChild(elem)
+            // https://github.com/feathericons/feather#feather
+            feather.replace()
         }
     }
 }
